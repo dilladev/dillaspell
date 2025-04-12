@@ -1,84 +1,62 @@
-# Hyperspace - a space for your links
+# 📝 DillaSpell – Spelling Word Practice Sheet Generator
 
-Hyperspace is a lightweight, intuitive tool for organizing and displaying your favorite links in a clean, customizable space. You can create multiple groups, each containing a curated set of links — complete with icons, titles, and metadata for quick reference.
+DillaSpell is a lightweight web app that lets teachers, parents, or students quickly turn a list of spelling words into a printable worksheet or downloadable PDF.
 
-Designed with flexibility in mind, Hyperspace lets you easily manage and reorder your content using drag-and-drop interactions. Whether you're building a personal dashboard, sharing resources, or managing project references, Hyperspace gives you a simple yet powerful way to keep everything connected in one place.
+You can:
+- Paste or type a list of spelling words
+- Automatically strip out numbering and formatting
+- Export a clean PDF with handwriting lines for each word
 
+## 🚀 Features
 
-
-## ✨ Features
-
-- 🗂️ Organize links into custom groups
-- 🔗 Add icons, metadata, and descriptions
-- 🔄 Drag-and-drop reordering
-- 💾 Data persistence with PostgreSQL
-- ⚡ Fast, responsive UI
-- 🛠️ Fully self-hosted
-
----
-
-## 🚀 Getting Started
-
-This guide helps you install Docker and run Hyperspace using Docker Compose.
+- Clean and responsive UI (built with Tailwind CSS)
+- PDF export using `jsPDF`
+- Ready for printing
+- Runs as a Docker container
 
 ---
 
-### ✅ Requirements
+## 📦 Docker Deployment
 
-- [Docker](https://docs.docker.com/get-docker/)
-- [Docker Compose](https://docs.docker.com/compose/install/)
-
----
-
-### 🐳 Install Docker & Docker Compose
-
-#### Ubuntu / Debian:
-
-```bash
-sudo apt update
-sudo apt install -y docker.io docker-compose
+DillaSpell can be deployed quickly using Docker Compose. Just copy this into a `docker-compose.yml` file:
 
 ```
-### 📦 Install & Run Hyperspace
-Step 1: Create a Folder for Hyperspace
-```
-mkdir hyperspace
-cd hyperspace
-```
-
-Step 2: Create a docker-compose.yml File
-Create a new file named docker-compose.yml and paste the contents on docker-compose.yml found in the repository
-
-Step 3: Start the App
-Run the following command from the same directory as your docker-compose.yml:
-```
-docker compose up -d
-```
-This command will download the necessary Docker images and start all the services (frontend, backend, and database).
-
-### 🌐 Access Hyperspace
-Once the app is running, you can access it in your browser:
-
-- Frontend UI: http://localhost:3002
-- Backend API (optional): http://localhost:3003
-
-### 🛑 Stopping the App
-To stop the app without removing your data:
-```
-docker compose down
+services:
+  fe:
+    image: dilladev/dillaspell:1.0.0
+    restart: always
+    ports:
+      - "3005:80"
+    environment:
+      - NODE_ENV=production
 ```
 
-To stop the app and remove all data (including uploads and the database):
+Then run:
 ```
-docker compose down -v
+docker-compose up -d
+The app will be available at http://localhost:3005
 ```
 
-### 📂 Data & Storage
-- Uploaded files are stored in the ./uploads folder on your host machine.
-- PostgreSQL data is stored in a Docker-managed volume named db_data.
+## 🧪 Local Development
+If you want to run the app locally for development:
 
-### 📣 Contributing / Feedback
-We welcome contributions, bug reports, and feature requests!
-Feel free to open an issue or pull request on the repository.
+```
+# Clone the repo (if you haven't already)
+git clone https://github.com/your-org/dillaspell.git
+cd dillaspell
 
-Made with ❤️ by the Hyperspace team
+# Install dependencies
+npm install
+
+# Run the app
+npm run dev
+```
+
+## 🛠 Tech Stack
+- React + TypeScript
+- Tailwind CSS
+- jsPDF
+- Docker
+
+## 📄 License
+MIT License. Use freely, modify as needed.
