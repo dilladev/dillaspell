@@ -51,7 +51,7 @@ If you want to run the app locally for development:
 
 ```
 # Clone the repo (if you haven't already)
-git clone https://github.com/your-org/dillaspell.git
+git clone https://github.com/dilladev/dillaspell.git
 cd dillaspell
 
 # Install dependencies
