@@ -1,0 +1,9 @@
+services:
+  fe:
+    image: dilladev/dillaspell:1.0.0
+    restart: always
+    ports:
+      - "3005:80"
+    environment:
+      - NODE_ENV=production
+      
