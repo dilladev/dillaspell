@@ -2,6 +2,15 @@
 
 DillaSpell is a lightweight web app that lets teachers, parents, or students quickly turn a list of spelling words into a printable worksheet or downloadable PDF.
 
+<p align="center">
+  Example at: https://dilladev.github.io/dillaspell/ <br/><br/>
+  <img src="https://github.com/user-attachments/assets/203f0949-4427-493d-861c-babbd3c9d33a" alt="DillaSpell screenshot" width="500" />
+</p>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/261d1d05-c49c-4f35-a55c-38c8f67d18f2" alt="DillaSpell printable page" width="500" />
+</p>
+
 You can:
 - Paste or type a list of spelling words
 - Automatically strip out numbering and formatting
